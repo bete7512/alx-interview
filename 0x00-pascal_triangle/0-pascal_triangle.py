@@ -6,7 +6,9 @@
 
 def pascal_triangle(nums):
     """  pascal_triangle    """
-    if nums == 0:
+    if nums <= 0:
+        return []
+    if(nums == 1):
         return [[1]]
     result = []
     for i in range(0, nums - 1):
