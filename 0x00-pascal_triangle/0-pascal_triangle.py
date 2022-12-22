@@ -4,14 +4,14 @@
 """
 
 
-def pascal_triangle(nums):
+def pascal_triangle(n):
     """  pascal_triangle    """
-    if nums <= 0:
+    if n <= 0:
         return []
-    if(nums == 1):
+    if(n == 1):
         return [[1]]
     result = []
-    for i in range(0, nums - 1):
+    for i in range(0, n - 1):
         if len(result) == 0:
             result.append([1])
         holder = []
