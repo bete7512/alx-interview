@@ -21,5 +21,4 @@ def pascal_triangle(n):
             else:
                 holder.append(result[i][j] + result[i][j-1])
         result.append(holder)
-    print(result)
     return result
