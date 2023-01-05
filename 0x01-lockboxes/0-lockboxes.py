@@ -11,8 +11,6 @@ def canUnlockAll(boxes):
         return False
     if len(boxes) == 0:
         return False
-    if len(boxes) == 1:
-        return True
     for i in range(1, len(boxes)-1):
         isLock = False
         for j in range(0, len(boxes)):
