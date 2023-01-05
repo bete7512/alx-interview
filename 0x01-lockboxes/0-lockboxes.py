@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 """Lockboxes from ALX software Engineering program"""
+
+
 def canUnlockAll(boxes):
     """determines if all the boxes can be opened"""
     if type(boxes) is not list:
