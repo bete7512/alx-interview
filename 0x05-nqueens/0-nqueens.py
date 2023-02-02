@@ -2,6 +2,7 @@
 """The N queens puzzle is the challenge of placing N non-attacking"""
 import sys
 
+
 def print_board(board):
     """ print_boar    """
     new_list = []
@@ -93,4 +94,3 @@ if __name__ == "__main__":
 
     number = validate(sys.argv)
     solve(number)
-
