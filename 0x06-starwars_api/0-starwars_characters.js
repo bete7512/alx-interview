@@ -7,34 +7,25 @@ if (process.argv.length === 3) {
   const options = {
     url: url,
     json: true
-};
-    request(options, (err, res, body) => {
-        if (err) {
-            console.log(err);
-        } else{
-            for (const char of body.characters) {
-                console.log(char);
-                async function getChar(char) {
-                    const options = {
-                        url: char,
-                        json: true
-                    };
-                    request(options, (err, res, body) => {
-                        if (err) {
-                            console.log(err);
-                        } else {
-                            console.log(body.name);
-                        }
-                    });
+  };
+  request(options, async (err, res, body) => {
+    if (err) {
+      console.log(err);
+    } else {
+      for (const char of body.characters) {
+        const ret = async () => {
+            return new Promise((resolve, reject) => {
+              request(char, options, function (error, res, body) {
+                if (error) {
+                  console.log(error);
+                } else {
+                  resolve(body.name);
                 }
-                getChar(char);
-            }
-        }
-   
-
-
-    })
-       
+              });
+            });
+          };
+          console.log(await ret());
+      }
+    }
+  });
 }
-
-
