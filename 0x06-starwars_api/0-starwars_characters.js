@@ -14,17 +14,17 @@ if (process.argv.length === 3) {
     } else {
       for (const char of body.characters) {
         const ret = async () => {
-            return new Promise((resolve, reject) => {
-              request(char, options, function (error, res, body) {
-                if (error) {
-                  console.log(error);
-                } else {
-                  resolve(body.name);
-                }
-              });
+          return new Promise((resolve, reject) => {
+            request(char, options, function (error, res, body) {
+              if (error) {
+                console.log(error);
+              } else {
+                resolve(body.name);
+              }
             });
-          };
-          console.log(await ret());
+          });
+        };
+        console.log(await ret());
       }
     }
   });
