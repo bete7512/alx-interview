@@ -1,13 +1,13 @@
 #!/usr/bin/node
 
-const request = require("request");
-async function doTheTask() {
+const request = require('request');
+async function doTheTask () {
   if (process.argv.length === 3) {
     const id = process.argv[2];
-    const url = "https://swapi-api.alx-tools.com/api/films/" + id;
+    const url = 'https://swapi-api.alx-tools.com/api/films/' + id;
     const options = {
       url: url,
-      json: true,
+      json: true
     };
     request(options, async (err, res, body) => {
       if (err) {
